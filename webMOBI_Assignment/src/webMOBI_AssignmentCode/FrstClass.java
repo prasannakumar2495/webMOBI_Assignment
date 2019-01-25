@@ -6,35 +6,43 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+//import org.openqa.selenium.firefox.FirefoxDriver;
+//import org.openqa.selenium.safari.SafariDriver;
 import org.testng.annotations.*;
 
 public class FrstClass {
 	WebDriver driver;
-	@Test(priority=0)
+
+	@Test(priority = 0)
 	private void openBrowser() {
-		 driver = new ChromeDriver();
+		driver = new ChromeDriver();
+		// driver = new FirefoxDriver();
 		System.setProperty("webdriver.driver.chrome", ".//chromerdriver.exe");
 		driver.manage().window().maximize();
 		driver.get("https://www.webmobi.com/");
-		driver.manage().timeouts().implicitlyWait(5000, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
-	@Test(priority=1)
-	private void step1() {
+
+	@Test(priority = 1)
+	private void step1() throws InterruptedException {
+		Thread.sleep(3000);
 		driver.findElement(By.xpath("//i[@class='fa fa-user-circle']")).click();
 	}
-	@Test(priority=2, groups= "lastmethod of FrstClass")
-	private void step2() {
-		//entering details in the email text field
-		WebElement emailTextField=driver.findElement(By.xpath("//input[@name='identity']"));
+
+	@Test(priority = 2, groups = "lastmethod of FrstClass")
+	private void step2() throws InterruptedException {
+		Thread.sleep(3000);
+		// entering details in the email text field
+		WebElement emailTextField = driver.findElement(By.xpath("//input[@name='identity']"));
 		emailTextField.sendKeys("prasannakumar2461995@gmail.com");
-		//entering the details in the password text field
+		// entering the details in the password text field
 		WebElement PWDTextfield = driver.findElement(By.xpath("//input[@name='credential']"));
 		PWDTextfield.sendKeys("2495@Apple");
-		//clicking on the 'submit' button 
+		// clicking on the 'submit' button
 		driver.findElement(By.xpath("//button[@name='submit']")).click();
 		String URL = driver.getCurrentUrl();
 		System.out.println(URL);
-		//driver.quit();
+		// driver.quit();
 	}
 
 }

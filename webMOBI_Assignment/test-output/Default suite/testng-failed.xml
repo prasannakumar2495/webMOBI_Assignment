@@ -3,11 +3,15 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="webMOBI_AssignmentCode.FrstClass">
+      <class name="webMOBI_AssignmentCode.ScndClass">
         <methods>
-          <include name="clickLogin"/>
+          <include name="step2"/>
+          <include name="step5"/>
+          <include name="step3"/>
+          <include name="step4"/>
+          <include name="step1"/>
         </methods>
-      </class> <!-- webMOBI_AssignmentCode.FrstClass -->
+      </class> <!-- webMOBI_AssignmentCode.ScndClass -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

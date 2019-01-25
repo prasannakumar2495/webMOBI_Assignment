@@ -3,7 +3,6 @@
 <suite name="Suite" parallel="false" preserve-order="true">
 	<test name="Test">
 		<classes>
-			
 			<class name="webMOBI_AssignmentCode.ScndClass"></class>
 		</classes>
 	</test> <!-- Test -->
